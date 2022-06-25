@@ -1,0 +1,143 @@
+/* CUSTOM PROPERTIES */
+
+:root {
+    --clr-background: hsl(233, 47%, 7%);
+    --clr-card-background: hsl(244, 38%, 16%);
+    --clr-accent: hsl(277, 64%, 61%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-text: hsla(0, 0%, 100%, 0.75);
+    --clr-text-alt: hsla(0, 0%, 100%, 0.6);
+
+    --ff-title: 'Inter', sans-serif;
+    --ff-body: 'Lexend Deca', sans-serif;
+    --fw-title: 700;
+    --fw-body: 400;
+    --fs-title: 26px;
+    --fs-subtitle: 20px;
+    --fs-body: 15px;
+}
+
+
+
+/* TYPOGRAPHY */
+
+h1,
+h2 {
+    font-family: var(--ff-title);
+    font-weight: var(--fw-title);
+    color: var(--clr-white);
+}
+
+h1 { font-size: var(--fs-title); }
+h2 { font-size: var(--fs-subtitle); }
+
+p {
+    font-family: var(--ff-body);
+    font-weight: var(--ff-body);
+    font-size: var(--fs-body);
+    color: var(--clr-text);
+}
+
+.statistics p {
+    font-size: 12px;
+}
+
+.highlighted-text { color: var(--clr-accent); }
+
+
+
+/* GENERAL STYLING */
+
+body {
+    background: var(--clr-background);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    margin-top: 50px;
+    background: var(--clr-card-background);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.text {
+    margin: 0 34px;
+    text-align: center;
+}
+
+.statistic {
+    line-height: 5px;
+    margin-top: 50px;
+}
+
+/* HERO IMAGE */
+
+.hero-image {
+    display: block;
+    width: 100%;
+}
+
+.hero-image-desktop {
+    display: none;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(277, 64%, 61%, 0.5);
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 1000px) {
+    body {
+        align-items: center;
+    }
+
+    .container {
+        flex-direction: row-reverse;
+        width: auto;
+        margin-top: 0;
+    }
+
+    .text {
+        text-align: left;
+        width: 420px;
+        margin-left: 60px;
+        margin-right: 130px;
+        margin-top: 75px;
+    }
+
+    .hero-image-desktop {
+        display: block;
+        height: 100%;
+        width: auto;
+    }
+
+    .hero-image-mobile {
+        display: none;
+    }
+
+    .statistics {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
